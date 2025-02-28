@@ -5,6 +5,7 @@ import {
   Card,
   FormHelperText
 } from "@mui/material";
+import axios from "Api/Axios"; // Correct path for axios
 import {
   TextFieldWrapper
 } from "components/authentication/StyledComponents";
@@ -31,6 +32,7 @@ const Register: FC = () => {
     terms: true,
     submit: null,
   };
+
   // form field value validation schema
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
@@ -39,7 +41,7 @@ const Register: FC = () => {
       .max(255)
       .required("Email is required"),
     password: Yup.string()
-      .min(6, "Password should be of minimum 10 characters length")
+      .min(6, "Password should be of minimum 6 characters length")
       .required("Password is required"),
   });
 
@@ -50,12 +52,23 @@ const Register: FC = () => {
       onSubmit: async (values: any) => {
         setLoading(true);
         try {
-          await register(values.email, values.password, values.name);
-          setLoading(false);
-          toast.success("You registered successfully");
-          navigate("/dashboard");
+          // Making the API request to register the user
+          const response = await axios.post('http://localhost:8000/api/register', {
+            name: values.name,
+            email: values.email,
+            password: values.password,
+          });
+
+          if (response.status === 200) {
+            setLoading(false);
+            toast.success("You registered successfully");
+            navigate("/dashboard"); // Redirect to the dashboard
+          } else {
+            setError("Something went wrong! Please try again.");
+            setLoading(false);
+          }
         } catch (error: any) {
-          setError(error?.message);
+          setError(error?.response?.data?.message || "An error occurred.");
           setLoading(false);
         }
       },
@@ -95,7 +108,6 @@ const Register: FC = () => {
 
         <FlexBox justifyContent="space-between" flexWrap="wrap" my="1rem">
 
-
           <form noValidate onSubmit={handleSubmit} style={{ width: "100%" }}>
             <FlexBox justifyContent="space-between" flexWrap="wrap">
               <TextFieldWrapper>
@@ -108,7 +120,7 @@ const Register: FC = () => {
                   onChange={handleChange}
                   value={values.name || ""}
                   error={Boolean(touched.name && errors.name)}
-                  helperText={touched.email && errors.email ? String(errors.email) : ""}
+                  helperText={touched.name && errors.name ? String(errors.name) : ""}
                 />
               </TextFieldWrapper>
 
@@ -137,11 +149,9 @@ const Register: FC = () => {
                 onChange={handleChange}
                 value={values.password || ""}
                 error={Boolean(touched.password && errors.password)}
-                helperText={touched.email && errors.email ? String(errors.email) : ""}
+                helperText={touched.password && errors.password ? String(errors.password) : ""}
               />
             </TextFieldWrapper>
-
-
 
             {error && (
               <FormHelperText
@@ -160,12 +170,10 @@ const Register: FC = () => {
             <Box sx={{ mt: 4 }}>
               {loading ? (
                 <LoadingButton loading fullWidth variant="contained">
-
                   S'inscrire
                 </LoadingButton>
               ) : (
                 <Button fullWidth type="submit" variant="contained">
-
                   S'inscrire
                 </Button>
               )}
@@ -173,7 +181,7 @@ const Register: FC = () => {
           </form>
 
           <Small margin="auto" mt={3} color="text.disabled">
-            Avez-vous déjà un compte ? {" "}
+            Avez-vous déjà un compte ?{" "}
             <Link to="/login">
               <Small color="primary.main">Se connecter?</Small>
             </Link>
