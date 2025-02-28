@@ -39,7 +39,7 @@ const Register: FC = () => {
       .max(255)
       .required("Email is required"),
     password: Yup.string()
-      .min(6, "Password should be of minimum 6 characters length")
+      .min(6, "Password should be of minimum 10 characters length")
       .required("Password is required"),
   });
 
