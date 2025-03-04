@@ -26,16 +26,8 @@ const index = [
     Icon: Icons.AddUserIcon,
     path: "/dashboard/add-user",
   },
-  {
-    title: "Login",
-    Icon: Icons.LoginIcon,
-    path: "/login",
-  },
-  {
-    title: "Register",
-    Icon: Icons.SessionsIcon,
-    path: "/Register",
-  },
+ 
+  
 ];
 
 export default index;

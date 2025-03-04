@@ -51,8 +51,8 @@ const TopSelling: FC = () => {
           shade: "light",
           type: "horizontal",
           shadeIntensity: 0.25,
-          gradientToColors: ["#00E396", "#008FFB"],
-          inverseColors: true,
+          gradientToColors: ["#FF0000", "#0000FF"], // Set red for the top and blue for the bottom
+          inverseColors: false, // Keep the colors in the correct gradient order
           opacityFrom: 0.6,
           opacityTo: 0.8,
           stops: [0, 90, 100],
