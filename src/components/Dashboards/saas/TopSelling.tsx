@@ -1,53 +1,78 @@
-import { Box, Card, Rating } from "@mui/material";
-import FlexBox from "components/FlexBox";
-import { H5, Small } from "components/Typography";
-import { FC } from "react";
+import React, { FC } from "react";
+import { Card } from "@mui/material";
+import ReactApexChart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
+// TopSelling Component
 const TopSelling: FC = () => {
+  const [state, setState] = React.useState({
+    series: [
+      {
+        data: [0, -41, 35, -51, 0, 62, -69, 32, -32, 54, 16, -50],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "area" as "area", // Ensures correct type for 'chart.type'
+        zoom: {
+          enabled: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      title: {
+        text: "Negative color for values less than 0",
+        align: "left" as "left", // Explicitly set the alignment to "left"
+      },
+      xaxis: {
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+      },
+      stroke: {
+        width: 0,
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          shade: "light",
+          type: "horizontal",
+          shadeIntensity: 0.25,
+          gradientToColors: ["#00E396", "#008FFB"],
+          inverseColors: true,
+          opacityFrom: 0.6,
+          opacityTo: 0.8,
+          stops: [0, 90, 100],
+        },
+      },
+    },
+  });
+
   return (
     <Card sx={{ padding: "2rem", height: "100%" }}>
-      <H5>Top selling Products</H5>
-
-      {productList.map((product, index) => (
-        <FlexBox key={index} mt="1.2rem">
-          <img src={product.image} alt="Men Keds" width="90px" />
-
-          <Box display="flex" flexDirection="column" ml="1rem">
-            <Small>{product.title}</Small>
-            <Rating
-              name="read-only"
-              size="small"
-              defaultValue={product.rating}
-              readOnly
-              sx={{ my: "3px" }}
-            />
-            <Small fontWeight={600}>${product.price}</Small>
-          </Box>
-        </FlexBox>
-      ))}
+      <div id="chart">
+        <ReactApexChart
+          options={state.options}
+          series={state.series}
+          type="area"
+          height={350}
+        />
+      </div>
     </Card>
   );
 };
-
-const productList = [
-  {
-    title: "Nike airmax 170",
-    image: "/static/products/black-keds.png",
-    price: 567,
-    rating: 5,
-  },
-  {
-    title: "Nike airmax 170",
-    image: "/static/products/green-keds.png",
-    price: 200,
-    rating: 5,
-  },
-  {
-    title: "Nike airmax 170",
-    image: "/static/products/yellow-keds.png",
-    price: 400,
-    rating: 5,
-  },
-];
 
 export default TopSelling;

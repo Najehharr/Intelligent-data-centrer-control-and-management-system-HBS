@@ -6,26 +6,7 @@ import { FC, Fragment, useRef, useState } from "react";
 import PopoverLayout from "./PopoverLayout";
 
 // dummy  data
-const services = [
-  {
-    id: "5e8883f1b51cc1956a5a1ec0",
-    title: "Slack",
-    body: "Email collaboration software",
-    image: "/static/connect-accounts/slack.svg",
-  },
-  {
-    id: "5e8883f7ed1486d665d8be1e",
-    title: "Github",
-    body: "Email collaboration software",
-    image: "/static/connect-accounts/github.svg",
-  },
-  {
-    id: "5e8883fca0e8612044248ecf",
-    title: "Stack Overflow",
-    body: "Email collaboration software",
-    image: "/static/connect-accounts/stack-overflow.svg",
-  },
-];
+
 
 const ServicePopover: FC = () => {
   const anchorRef = useRef(null);
@@ -39,17 +20,7 @@ const ServicePopover: FC = () => {
         </Badge>
       </IconButton>
 
-      <PopoverLayout
-        hiddenViewButton
-        popoverOpen={open}
-        anchorRef={anchorRef}
-        title="Web apps & services"
-        popoverClose={() => setOpen(false)}
-      >
-        {services.map((service) => (
-          <ListItem service={service} key={service.id} />
-        ))}
-      </PopoverLayout>
+      
     </Fragment>
   );
 };

@@ -44,19 +44,13 @@ const LanguagePopover: FC = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleChangeLanguage = (language: string) => {
-    setOpen(false);
-  };
 
-  const selectedLanguage = languageOptions["en"];
+
+
 
   return (
     <>
-      <IconButton onClick={handleOpen} ref={anchorRef}>
-        <IconWrapper>
-          <img alt={selectedLanguage.label} src={selectedLanguage.icon} />
-        </IconWrapper>
-      </IconButton>
+   
       <Popover
         keepMounted
         open={open}
@@ -65,18 +59,7 @@ const LanguagePopover: FC = () => {
         anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
         PaperProps={{ sx: { width: 150, padding: "0.5rem 0" } }}
       >
-        {Object.keys(languageOptions).map((language: string) => (
-          <MenuItem
-            key={languageOptions[language].label}
-            onClick={() => handleChangeLanguage(language)}
-          >
-            <ItemWrapper>
-              <H6 fontWeight={600} ml={1}>
-                {languageOptions[language].label}
-              </H6>
-            </ItemWrapper>
-          </MenuItem>
-        ))}
+        
       </Popover>
     </>
   );

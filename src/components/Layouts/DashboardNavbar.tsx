@@ -12,7 +12,7 @@ import { FC, useContext } from "react";
 import LanguagePopover from "./popovers/LanguagePopover";
 import NotificationsPopover from "./popovers/NotificationsPopover";
 import ProfilePopover from "./popovers/ProfilePopover";
-import ServicePopover from "./popovers/ServicePopover";
+
 
 // root component interface
 interface DashboardNavBarProps {
@@ -66,7 +66,7 @@ const DashboardNavbar: FC<DashboardNavBarProps> = ({
 
           <Box flexGrow={1} textAlign="center">
             <img
-              src="/static/logo/logo.svg"
+              src="/static/logo/HB.jpg"
               width="100%"
               height="30"
               alt="Logo"
@@ -105,7 +105,7 @@ const DashboardNavbar: FC<DashboardNavBarProps> = ({
           <>
             <LanguagePopover />
             <NotificationsPopover />
-            <ServicePopover />
+           
           </>
         )}
         <ProfilePopover />
