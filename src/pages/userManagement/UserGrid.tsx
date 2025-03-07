@@ -24,7 +24,7 @@ const StyledFlexBox = styled(FlexBox)(({ theme }) => ({
 
 const UserGrid: FC = () => {
   // change navbar title
-  useTitle("User Grid");
+  useTitle("Grille des utilisateurs");
 
   const navigate = useNavigate();
   const handleAddUser = () => navigate("/dashboard/add-user");
@@ -34,7 +34,7 @@ const UserGrid: FC = () => {
       <StyledFlexBox>
         <SearchInput placeholder="Search user..." />
         <Button variant="contained" onClick={handleAddUser}>
-          Add New User
+        Ajouter un nouveau utilisateur
         </Button>
       </StyledFlexBox>
 

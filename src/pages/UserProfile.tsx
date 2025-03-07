@@ -52,7 +52,7 @@ const StyledTabPanel = styled(TabPanel)(() => ({
 
 const UserProfile: FC = () => {
   // change navbar title
-  useTitle("User Profile");
+  useTitle("Profil utilisateur");
   const { user } = useAuth();
 
   const [value, setValue] = useState("1");

@@ -82,11 +82,7 @@ const ProfilePopover: FC = () => {
         }
       >
         <Box pt={1}>
-          <StyledSmall
-            onClick={() => handleMenuItem("/dashboard/user-profile")}
-          >
-            Définir le statut
-          </StyledSmall>
+
 
           <StyledSmall
             onClick={() => handleMenuItem("/dashboard/user-profile")}

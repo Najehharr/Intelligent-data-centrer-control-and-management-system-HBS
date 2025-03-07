@@ -26,7 +26,7 @@ const StyledFlexBox = styled(FlexBox)(({ theme }) => ({
 
 const UserList: FC = () => {
   // change navbar title
-  useTitle("User List");
+  useTitle("Liste des utilisateurs");
 
   const navigate = useNavigate();
   const handleAddUser = () => navigate("/dashboard/add-user");
@@ -36,7 +36,7 @@ const UserList: FC = () => {
       <StyledFlexBox>
         <SearchInput placeholder="Search user..." />
         <Button variant="contained" onClick={handleAddUser}>
-          Add New User
+        Ajouter un nouveau utilisateur
         </Button>
       </StyledFlexBox>
 

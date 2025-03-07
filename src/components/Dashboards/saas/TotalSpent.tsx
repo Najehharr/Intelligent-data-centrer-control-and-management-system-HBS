@@ -1,7 +1,6 @@
-import React from "react";
 import { Card } from "@mui/material";
-import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts"; // Ensure correct import
+import Chart from "react-apexcharts";
 
 const ApexChart = () => {
   const options: ApexOptions = {
@@ -31,7 +30,7 @@ const ApexChart = () => {
       curve: "smooth",
     },
     title: {
-      text: "Average High & Low Temperature",
+      text: "Température moyenne haute et basse",
       align: "left",
     },
     grid: {
@@ -47,7 +46,7 @@ const ApexChart = () => {
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
       title: {
-        text: "Month",
+        text: "Mois",
       },
     },
     yaxis: {
@@ -68,11 +67,11 @@ const ApexChart = () => {
 
   const series = [
     {
-      name: "High - 2013",
+      name: "Haut- 2013",
       data: [28, 29, 33, 36, 32, 32, 33],
     },
     {
-      name: "Low - 2013",
+      name: "Faible - 2013",
       data: [12, 11, 14, 18, 17, 13, 13],
     },
   ];

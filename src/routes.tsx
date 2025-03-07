@@ -26,7 +26,7 @@ const ForgetPassword = Loadable(
 // Dashboard pages
 const DashboardSaaS = Loadable(lazy(() => import("./pages/dashboards/SaaS")));
 
-// user profile
+// Profil utilisateur
 const UserProfile = Loadable(lazy(() => import("./pages/UserProfile")));
 
 // user management

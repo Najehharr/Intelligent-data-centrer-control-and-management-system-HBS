@@ -23,7 +23,7 @@ const TopSelling: FC = () => {
         enabled: false,
       },
       title: {
-        text: "Negative color for values less than 0",
+        text: "Couleur négative pour les valeurs inférieures à 0",
         align: "left" as "left", // Explicitly set the alignment to "left"
       },
       xaxis: {

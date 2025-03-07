@@ -15,10 +15,10 @@ Its clean codebase and design significantly reduce development costs, time, and 
   <li><a href="https://uko-react-free.netlify.app/dashboard">Dashboard</a></li>
   <li>Users
     <ul>
-      <li><a href="https://uko-react-free.netlify.app/dashboard/user-profile">User Profile</a></li>
-      <li><a href="https://uko-react-free.netlify.app/dashboard/user-list">User List</a></li>
-      <li><a href="https://uko-react-free.netlify.app/dashboard/user-grid">User Grid</a></li>
-      <li><a href="https://uko-react-free.netlify.app/dashboard/add-user">Add User</a></li>
+      <li><a href="https://uko-react-free.netlify.app/dashboard/user-profile">Profil utilisateur</a></li>
+      <li><a href="https://uko-react-free.netlify.app/dashboard/user-list">Liste des utilisateurs</a></li>
+      <li><a href="https://uko-react-free.netlify.app/dashboard/user-grid">Grille des utilisateurs</a></li>
+      <li><a href="https://uko-react-free.netlify.app/dashboard/add-user">Ajouter un utilisateur</a></li>
     </ul>
   </li>
   <li>UI kits
@@ -60,10 +60,10 @@ Its clean codebase and design significantly reduce development costs, time, and 
   <li>Dashboard</li>
   <li>Users
     <ul>
-      <li>User Profile</li>
-      <li>User List</li>
-      <li>User Grid</li>
-      <li>Add User</li>
+      <li>Profil utilisateur</li>
+      <li>Liste des utilisateurs</li>
+      <li>Grille des utilisateurs</li>
+      <li>Ajouter un utilisateur</li>
     </ul>
   </li>
   <li>UI kits
@@ -158,7 +158,7 @@ Its clean codebase and design significantly reduce development costs, time, and 
       <li>React vis</li>
     </ul>
   </li>
-  <li>User profile</li>
+  <li>Profil utilisateur</li>
   <li>6 months support</li>
 
 </ul>
